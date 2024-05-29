@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <h1>0</h1>
-      <button>증가</button>
+      <button onClick={()=> console.log("클릭됨")}>증가</button>
     </div>
   );
 }
