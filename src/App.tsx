@@ -4,12 +4,11 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 
-function SchoolCounter({schoolName}) {
+function SchoolCounter() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
-      <h2>{schoolName}</h2>
       <h1>{count}</h1>
       <button onClick={()=> setCount((cur_count) => cur_count + 1)}>증가</button>
       <button onClick={()=> setCount((cur_count) => cur_count - 1)}>감소</button>
@@ -20,12 +19,16 @@ function SchoolCounter({schoolName}) {
 
 
 function App() {
-  const schools = [];
+  const schools = ["경기고","성수고","창동고","성신여고","양명여고"];
 
-  for (let i = 0; i < 1000; i++) {
-    schools.push(<SchoolCounter schoolName={`학교 ${i}`} key={i}/>);
-  }
 
-  return <div>{schools}</div>;
+  return (
+  <div>
+    {schools.map((학교) => (<div>
+      <h2>{학교}</h2>
+      <SchoolCounter/>
+      </div>))}
+  </div>
+  )
 }
 export default App;
