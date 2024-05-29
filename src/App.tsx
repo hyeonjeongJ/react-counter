@@ -14,7 +14,8 @@ function App() {
       <h1>{count}</h1>
       <button onClick={()=> setCount((cur_count) => cur_count + 1)}>증가</button>
       <button onClick={()=> setCount((cur_count) => cur_count - 1)}>감소</button>
-      <button onClick={()=> setCount(0)}>초기화</button> 
+      {count!=0 ? <button onClick={()=> setCount(0)}>초기화</button> : null}
+    
     </div>
   );
 }
