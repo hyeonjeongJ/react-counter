@@ -18,14 +18,14 @@ function SchoolCounter({schoolName}) {
   );
 }
 
-function App() {
-  return (
-    <div>
-      <SchoolCounter schoolName="A 학교" />
-      <SchoolCounter schoolName="B 학교" />
-      <SchoolCounter schoolName="C 학교" />
-    </div>
-  );
-}
 
+function App() {
+  const schools = [];
+
+  for (let i = 0; i < 1000; i++) {
+    schools.push(<SchoolCounter schoolName={`학교 ${i}`} key={i}/>);
+  }
+
+  return <div>{schools}</div>;
+}
 export default App;
